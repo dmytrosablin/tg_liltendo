@@ -1,6 +1,15 @@
 const TelegramBot = require('node-telegram-bot-api');
+const express = require("express");
+const app = express();
 
-const token = '6602794619:AAEspg2Ru9CL3XvUInibD_uVBrTLVepmpZc';
+app.get("/", (req, res) => {
+    res.json("hdsakjfh")
+})
+app.listen(3000, () => {
+
+})
+
+const token = '6547440836:AAGwyxMMR-v_c7NmDYFy53t4-icWd-bAG0E';
 const url = 'https://liltendo.onrender.com/'
 
 const bot = new TelegramBot(token, {polling: true});
