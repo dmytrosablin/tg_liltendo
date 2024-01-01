@@ -22,11 +22,14 @@ bot.on('message', async (msg) => {
         const record = await data.json()
         await bot.sendMessage(chatId, `Your record is ${record}`)
     } else if (text == '/leaders') {
-        const data = await fetch('https://liltendo.onrender.com/api/get_liders/123123')
+        const data = await fetch('https://liltendo.onrender.com/api/get_liders')
         const leaders = await data.json();
-        await bot.sendMessage(chatId, 'There is our leaders: ')
+        let text = "";
+        // await bot.sendMessage(chatId, 'There is our leaders: ')
         for (let i = 0; i < leaders.length; i++) {
-            bot.sendMessage(chatId, leaders[i].record.toString())
+            // bot.sendMessage(chatId, leaders[i].record.toString())
+            text += `${leaders[i].name} - ${leaders[i].record.toString()}\n`
         }
+        await bot.sendMessage(chatId, "There is our leaders: \n"+ text)
     }
 });
