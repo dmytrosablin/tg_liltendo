@@ -10,10 +10,10 @@ bot.on('message', async (msg) => {
     const text = msg.text;
 
     if (text == '/start' || text == '/play') {
-        await bot.sendMessage(chatId, 'Test', {
+        await bot.sendMessage(chatId, 'Hello, my friend!', {
             reply_markup: {
                 inline_keyboard: [
-                    [{text: "testik", web_app: {url}}]
+                    [{text: "Open game", web_app: {url}}]
                 ]
             }
         })
