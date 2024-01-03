@@ -26,7 +26,7 @@ app.listen("3000", () => {
                 }
             })
         } else if (text == '/record') {
-            const data = await fetch(`https://liltendo.onrender.com/api/${chatId.toString()}/${msg.chat.first_name + msg.chat.last_name}`);
+            const data = await fetch(`https://liltendo.onrender.com/api/${chatId.toString()}/${msg.entities.filter(e => e.type == 'metion').toString()}`);
             const record = await data.json()
             await bot.sendMessage(chatId, `Your record is ${record}`)
         } else if (text == '/leaders') {
