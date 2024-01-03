@@ -1,4 +1,4 @@
-    const TelegramBot = require('node-telegram-bot-api');
+const TelegramBot = require('node-telegram-bot-api');
 const express = require("express");
 const app = express();
 
@@ -26,8 +26,8 @@ app.listen("3000", () => {
                 }
             })
         } else if (text == '/record') {
-            console.log(msg.chat)
-            const data = await fetch(`https://liltendo.onrender.com/api/${chatId.toString()}/ton}`);
+            console.log(msg.from_s)
+            const data = await fetch(`https://liltendo.onrender.com/api/${chatId.toString()}/${msg.chat.first_name}`);
             const record = await data.json()
             await bot.sendMessage(chatId, `Your record is ${record}`)
         } else if (text == '/leaders') {
