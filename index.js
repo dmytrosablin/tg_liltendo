@@ -52,7 +52,7 @@ app.get("/", (req, res) => {
 });
 
 
-const token = '1870780504:AAHygwbSV6wrD4zCxENWiiGIrwQtK8ntoiA';
+const token = '6602794619:AAEspg2Ru9CL3XvUInibD_uVBrTLVepmpZc';
 const url = 'https://liltendo.onrender.com/'
 
 const bot = new TelegramBot(token, {polling: true});
