@@ -57,7 +57,23 @@ const url = 'https://liltendo.onrender.com/'
 
 const bot = new TelegramBot(token, {polling: true});
 
+
 app.listen("3000", () => {
+    bot.setMyCommands([
+        {
+            command: "play",
+            description: "Play a game"
+        },
+        {
+            command: "record",
+            description: "My record"
+        },
+        {
+            command: "leaders",
+            description: "Game leaders"
+        }
+    ]);
+
     bot.on('message', async (msg) => {
 
         const chatId = msg.chat.id;
